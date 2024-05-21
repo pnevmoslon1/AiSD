@@ -4,11 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cf67c21b-0fd9-4827-9f21-a6660abdfd10" name="Changes" comment="">
+    <list default="true" id="cf67c21b-0fd9-4827-9f21-a6660abdfd10" name="Changes" comment="YellowKek 2.0">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Lavenshtein.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/task3.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Queue.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Queue.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -18,8 +17,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -30,6 +29,7 @@
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="UPDATE_TYPE" value="REBASE" />
   </component>
   <component name="GitHubPullRequestSearchHistory"><![CDATA[{
   "lastFilter": {
@@ -71,6 +71,11 @@
     "node.js.selected.package.tslint": "(autodetect)"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\123\IdeaProjects\AiSD\src" />
+    </key>
+  </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
@@ -87,19 +92,49 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1713918227980</updated>
-      <workItem from="1716317003102" duration="2865000" />
+      <workItem from="1716317003102" duration="4302000" />
     </task>
+    <task id="LOCAL-00001" summary="YellowKek">
+      <option name="closed" value="true" />
+      <created>1716319921716</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1716319921716</updated>
+    </task>
+    <task id="LOCAL-00002" summary="YellowKek 2.0">
+      <option name="closed" value="true" />
+      <created>1716320164299</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1716320164299</updated>
+    </task>
+    <task id="LOCAL-00003" summary="YellowKek 2.0">
+      <option name="closed" value="true" />
+      <created>1716320541852</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1716320541852</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="YellowKek" />
+    <MESSAGE value="YellowKek 2.0" />
+    <option name="LAST_COMMIT_MESSAGE" value="YellowKek 2.0" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/Queue.java</url>
-          <line>41</line>
+          <line>44</line>
           <option name="timeStamp" value="4" />
         </line-breakpoint>
       </breakpoints>

@@ -1,7 +1,7 @@
 public class Queue<T> implements IQueue<T> {
     public Node<T> head;
     public Node<T> last;
-    private int size= 0;
+    private int size = 0;
 
     public Queue() {
 
@@ -23,18 +23,21 @@ public class Queue<T> implements IQueue<T> {
         size++;
     }
 
-    public T pop(){
+    public T pop() {
         T res = head.value;
         head = head.prev;
         size--;
         return res;
     }
-    public T peek(){
+
+    public T peek() {
         return head.value;
     }
-    public boolean isEmpty(){
+
+    public boolean isEmpty() {
         return size == 0;
     }
+
     @Override
     public String toString() {
         Node<T> first = head;
