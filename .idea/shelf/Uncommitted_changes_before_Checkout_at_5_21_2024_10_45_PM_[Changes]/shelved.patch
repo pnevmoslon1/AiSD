@@ -1,0 +1,234 @@
+Index: src/task3.java
+===================================================================
+diff --git a/src/task3.java b/src/task3.java
+deleted file mode 100644
+--- a/src/task3.java	(revision 602cc7b25e142f16b3e35321dee33908660ed188)
++++ /dev/null	(revision 602cc7b25e142f16b3e35321dee33908660ed188)
+@@ -1,67 +0,0 @@
+-public class task3 {
+-
+-    public static int binSearch(int a[], int x) {
+-        int r = a.length - 1;
+-        int l = 0;
+-        int mid = (r + l) / 2;
+-        while (r - l > 1) {
+-            if (a[mid] < x) l = mid;
+-            else r = mid;
+-        }
+-        if  (a[l] == x) return l;
+-        if (a[r] == x) return r;
+-        return - 1;
+-    }
+-
+-    public static void mergeSort(int a[], int n) {
+-        if (n < 2) {
+-            return;
+-        }
+-        int mid = n / 2;
+-        int[] l = new int[mid];
+-        int[] r = new int[n - mid];
+-
+-        for (int i = 0; i < mid; i++) {
+-            l[i] = a[i];
+-        }
+-        for (int i = mid; i < n; i++) {
+-            r[i - mid] = a[i];
+-        }
+-        mergeSort(l, mid);
+-        mergeSort(r, n - mid);
+-
+-        merge(a, l, r, mid, n - mid);
+-    }
+-
+-    private static void merge(
+-            int a[], int l[], int r[], int left, int right) {
+-
+-        int i = 0, j = 0, k = 0;
+-        while (i < left && j < right) {
+-            if (l[i] <= r[j]) {
+-                a[k++] = l[i++];
+-            }
+-            else {
+-                a[k++] = r[j++];
+-            }
+-        }
+-        while (i < left) {
+-            a[k++] = l[i++];
+-        }
+-        while (j < right) {
+-            a[k++] = r[j++];
+-        }
+-    }
+-    public static void bubbleSort(int a[])
+-    {
+-        int n = a.length;
+-        for (int i = 0; i < n - 1; i++)
+-            for (int j = 0; j < n - i - 1; j++)
+-                if (a[j] > a[j + 1]) {
+-                    int temp = a[j];
+-                    a[j] = a[j + 1];
+-                    a[j + 1] = temp;
+-                }
+-    }
+-
+-}
+Index: src/Lavenshtein.java
+===================================================================
+diff --git a/src/Lavenshtein.java b/src/Lavenshtein.java
+deleted file mode 100644
+--- a/src/Lavenshtein.java	(revision 602cc7b25e142f16b3e35321dee33908660ed188)
++++ /dev/null	(revision 602cc7b25e142f16b3e35321dee33908660ed188)
+@@ -1,35 +0,0 @@
+-public class Lavenshtein {
+-    public static int countOfOperations(String str1, String str2) {
+-        int[][] d = new int[str1.length() + 1][str2.length() + 1];
+-
+-        for (int i = 0; i < str1.length() + 1; i++) {
+-            d[i][0] = i;
+-        }
+-        for (int i = 0; i < str2.length() + 1; i++) {
+-            d[0][i] = i;
+-        }
+-
+-        str1 = " " + str1;
+-        str2 = " " + str2;
+-        for (int i = 1; i < str1.length(); i++) {
+-            for (int j = 1; j < str2.length(); j++) {
+-                if (str1.charAt(i) == str2.charAt(j)) d[i][j] = Math.min(Math.min(d[i - 1][j - 1], d[i][j - 1] + 1), d[i - 1][j] + 1);
+-                else d[i][j] = Math.min(Math.min(d[i - 1][j - 1] + 1, d[i][j - 1] + 1), d[i - 1][j] + 1);
+-
+-            }
+-        }
+-
+-        for (int i = 0; i < str1.length(); i++) {
+-            for (int j = 0; j < str2.length(); j++) {
+-                System.out.print(d[i][j] + "  ");
+-            }
+-            System.out.println();
+-        }
+-
+-        int res = d[str1.length() - 1][str2.length() - 1];
+-        return res;
+-    }
+-
+-
+-}
+-
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"AutoImportSettings\">\r\n    <option name=\"autoReloadType\" value=\"SELECTIVE\" />\r\n  </component>\r\n  <component name=\"ChangeListManager\">\r\n    <list default=\"true\" id=\"cf67c21b-0fd9-4827-9f21-a6660abdfd10\" name=\"Changes\" comment=\"\">\r\n      <change afterPath=\"$PROJECT_DIR$/.gitignore\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/.idea/misc.xml\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/.idea/modules.xml\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/.idea/uiDesigner.xml\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/.idea/vcs.xml\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/.idea/workspace.xml\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/lab2_aisd.iml\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/src/Main.java\" afterDir=\"false\" />\r\n    </list>\r\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\r\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\r\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\r\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\r\n  </component>\r\n  <component name=\"FileTemplateManagerImpl\">\r\n    <option name=\"RECENT_TEMPLATES\">\r\n      <list>\r\n        <option value=\"Class\" />\r\n      </list>\r\n    </option>\r\n  </component>\r\n  <component name=\"Git.Settings\">\r\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\r\n  </component>\r\n  <component name=\"ProblemsViewState\">\r\n    <option name=\"selectedTabId\" value=\"ProjectErrors\" />\r\n  </component>\r\n  <component name=\"ProjectColorInfo\">{\r\n  &quot;associatedIndex&quot;: 7\r\n}</component>\r\n  <component name=\"ProjectId\" id=\"2fWYIBKiGVjFrGg6QkIlHE9bmiE\" />\r\n  <component name=\"ProjectLevelVcsManager\" settingsEditedManually=\"true\">\r\n    <ConfirmationsSetting value=\"1\" id=\"Add\" />\r\n  </component>\r\n  <component name=\"ProjectViewState\">\r\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\r\n    <option name=\"showLibraryContents\" value=\"true\" />\r\n  </component>\r\n  <component name=\"PropertiesComponent\">{\r\n  &quot;keyToString&quot;: {\r\n    &quot;Application.Main.executor&quot;: &quot;Run&quot;,\r\n    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,\r\n    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,\r\n    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,\r\n    &quot;git-widget-placeholder&quot;: &quot;master&quot;,\r\n    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;\r\n  }\r\n}</component>\r\n  <component name=\"SharedIndexes\">\r\n    <attachedChunks>\r\n      <set>\r\n        <option value=\"jdk-21.0.2-temurin-21.0.2-4caba194b151-7da56cdf\" />\r\n      </set>\r\n    </attachedChunks>\r\n  </component>\r\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\r\n  <component name=\"TaskManager\">\r\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\r\n      <changelist id=\"cf67c21b-0fd9-4827-9f21-a6660abdfd10\" name=\"Changes\" comment=\"\" />\r\n      <created>1713918227980</created>\r\n      <option name=\"number\" value=\"Default\" />\r\n      <option name=\"presentableId\" value=\"Default\" />\r\n      <updated>1713918227980</updated>\r\n    </task>\r\n    <servers />\r\n  </component>\r\n  <component name=\"XDebuggerManager\">\r\n    <watches-manager>\r\n      <configuration name=\"Application\">\r\n        <watch expression=\"str1\" />\r\n      </configuration>\r\n    </watches-manager>\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	(revision 602cc7b25e142f16b3e35321dee33908660ed188)
++++ b/.idea/workspace.xml	(date 1715120585981)
+@@ -5,14 +5,10 @@
+   </component>
+   <component name="ChangeListManager">
+     <list default="true" id="cf67c21b-0fd9-4827-9f21-a6660abdfd10" name="Changes" comment="">
+-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/lab2_aisd.iml" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/Lavenshtein.java" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/task3.java" beforeDir="false" />
+     </list>
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+@@ -27,6 +23,11 @@
+     </option>
+   </component>
+   <component name="Git.Settings">
++    <option name="RECENT_BRANCH_BY_REPOSITORY">
++      <map>
++        <entry key="$PROJECT_DIR$" value="master" />
++      </map>
++    </option>
+     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+   </component>
+   <component name="ProblemsViewState">
+@@ -43,16 +44,16 @@
+     <option name="hideEmptyMiddlePackages" value="true" />
+     <option name="showLibraryContents" value="true" />
+   </component>
+-  <component name="PropertiesComponent">{
+-  &quot;keyToString&quot;: {
+-    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
+-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;
++  <component name="PropertiesComponent"><![CDATA[{
++  "keyToString": {
++    "Application.Main.executor": "Run",
++    "RunOnceActivity.OpenProjectViewOnStart": "true",
++    "RunOnceActivity.ShowReadmeOnStart": "true",
++    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
++    "git-widget-placeholder": "Queue",
++    "kotlin-language-version-configured": "true"
+   }
+-}</component>
++}]]></component>
+   <component name="SharedIndexes">
+     <attachedChunks>
+       <set>
+@@ -70,6 +71,29 @@
+       <updated>1713918227980</updated>
+     </task>
+     <servers />
++  </component>
++  <component name="Vcs.Log.Tabs.Properties">
++    <option name="TAB_STATES">
++      <map>
++        <entry key="MAIN">
++          <value>
++            <State>
++              <option name="FILTERS">
++                <map>
++                  <entry key="branch">
++                    <value>
++                      <list>
++                        <option value="Queue" />
++                      </list>
++                    </value>
++                  </entry>
++                </map>
++              </option>
++            </State>
++          </value>
++        </entry>
++      </map>
++    </option>
+   </component>
+   <component name="XDebuggerManager">
+     <watches-manager>
+Index: src/Main.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>//https://habr.com/ru/articles/438512/\r\n\r\npublic class Main {\r\n    public static void main(String[] args) {\r\n        System.out.println(Lavenshtein.countOfOperations( \"Гибралтар\",\"Лабрадор\"));\r\n    }\r\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/Main.java b/src/Main.java
+--- a/src/Main.java	(revision 602cc7b25e142f16b3e35321dee33908660ed188)
++++ b/src/Main.java	(date 1715120290792)
+@@ -1,7 +1,7 @@
+-//https://habr.com/ru/articles/438512/
++
+ 
+ public class Main {
+     public static void main(String[] args) {
+-        System.out.println(Lavenshtein.countOfOperations( "Гибралтар","Лабрадор"));
++
+     }
+ }
+\ No newline at end of file
