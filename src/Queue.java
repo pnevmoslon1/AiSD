@@ -1,18 +1,18 @@
 public class Queue<T> implements IQueue<T> {
     public Node<T> head;
     public Node<T> last;
-    private int count = 0;
+    private int size= 0;
 
     public Queue() {
 
     }
 
-    public int getCount() {
-        return count;
+    public int getSize() {
+        return size;
     }
 
     public void push(T value) {
-        if (count == 0) {
+        if (size == 0) {
             head = new Node<T>(value);
             last = head;
         } else {
@@ -20,20 +20,20 @@ public class Queue<T> implements IQueue<T> {
             last.prev = newNode;
             last = newNode;
         }
-        count++;
+        size++;
     }
 
     public T pop(){
         T res = head.value;
         head = head.prev;
-        count--;
+        size--;
         return res;
     }
     public T peek(){
         return head.value;
     }
     public boolean isEmpty(){
-        return count == 0;
+        return size == 0;
     }
     @Override
     public String toString() {
