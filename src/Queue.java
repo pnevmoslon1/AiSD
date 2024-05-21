@@ -1,4 +1,4 @@
-public class Queue<T> extends IQueue<T>{
+public class Queue<T> implements IQueue<T> {
     public Node<T> head;
     public Node<T> last;
     private int count = 0;
@@ -29,7 +29,7 @@ public class Queue<T> extends IQueue<T>{
         count--;
         return res;
     }
-    public T peak(){
+    public T peek(){
         return head.value;
     }
     public boolean isEmpty(){
