@@ -1,7 +1,15 @@
-//https://habr.com/ru/articles/438512/
+
 
 public class Main {
     public static void main(String[] args) {
-        System.out.println(Lavenshtein.countOfOperations( "Гибралтар","Лабрадор"));
+        Queue atd = new Queue();
+        System.out.println(atd.isEmpty());
+        atd.push(1);
+        atd.push(2);
+        atd.push(3);
+        System.out.println(atd.pop());
+        atd.pop();
+        System.out.println(atd.isEmpty());
+        atd.pop();
     }
 }
