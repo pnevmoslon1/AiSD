@@ -8,11 +8,13 @@ public class Main {
 //        tree.insert(17);
 //        tree.insert(35);
 //        tree.insert(99);
-////        System.out.println(tree.find(33));
-////        System.out.println(tree.find(1));
+//
+//        System.out.println(tree.find(tree.root, 33));
+//        System.out.println(tree.find(tree.root, 1));
 //        tree.printTree(tree.root);
 //        System.out.println();
-//        tree.delete(5);
+//
+//        tree.deleteRecursive(tree.root, 5);
 //        tree.printTree(tree.root);
 //        System.out.println();
 
@@ -29,15 +31,14 @@ public class Main {
 //        g.BFS(2);
 
 
-        int INF = 999999999;
+        int INF = 99999999;
         int graph[][] = {
                 {0, 5, INF, 10},
                 {INF, 0, 3, INF},
                 {INF, INF, 0, 1},
                 {INF, INF, INF, 0}
         };
-        FloydWarshall a = new FloydWarshall();
-        a.floydWarshall(graph);
+        Floyd a = new Floyd();
+        a.floyd(graph);
     }
-
 }
