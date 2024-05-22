@@ -6,6 +6,9 @@ public class Queue<T> implements IQueue<T> {
     public Queue() {
 
     }
+    public Queue(T  k) {
+
+    }
 
     public int getSize() {
         return size;
