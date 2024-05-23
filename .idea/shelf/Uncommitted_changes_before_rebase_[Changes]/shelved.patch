@@ -1,0 +1,136 @@
+Index: src/Main.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>//https://habr.com/ru/articles/438512/\r\n\r\npublic class Main {\r\n    public static void main(String[] args) {\r\n        System.out.println(Lavenshtein.countOfOperations( \"Гибралтар\",\"Лабрадор\"));\r\n    }\r\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/Main.java b/src/Main.java
+--- a/src/Main.java	(revision 602cc7b25e142f16b3e35321dee33908660ed188)
++++ b/src/Main.java	(date 1716452345836)
+@@ -1,7 +1,5 @@
+-//https://habr.com/ru/articles/438512/
+-
+ public class Main {
+     public static void main(String[] args) {
+-        System.out.println(Lavenshtein.countOfOperations( "Гибралтар","Лабрадор"));
++
+     }
+ }
+\ No newline at end of file
+Index: src/task3.java
+===================================================================
+diff --git a/src/task3.java b/src/task3.java
+deleted file mode 100644
+--- a/src/task3.java	(revision 602cc7b25e142f16b3e35321dee33908660ed188)
++++ /dev/null	(revision 602cc7b25e142f16b3e35321dee33908660ed188)
+@@ -1,67 +0,0 @@
+-public class task3 {
+-
+-    public static int binSearch(int a[], int x) {
+-        int r = a.length - 1;
+-        int l = 0;
+-        int mid = (r + l) / 2;
+-        while (r - l > 1) {
+-            if (a[mid] < x) l = mid;
+-            else r = mid;
+-        }
+-        if  (a[l] == x) return l;
+-        if (a[r] == x) return r;
+-        return - 1;
+-    }
+-
+-    public static void mergeSort(int a[], int n) {
+-        if (n < 2) {
+-            return;
+-        }
+-        int mid = n / 2;
+-        int[] l = new int[mid];
+-        int[] r = new int[n - mid];
+-
+-        for (int i = 0; i < mid; i++) {
+-            l[i] = a[i];
+-        }
+-        for (int i = mid; i < n; i++) {
+-            r[i - mid] = a[i];
+-        }
+-        mergeSort(l, mid);
+-        mergeSort(r, n - mid);
+-
+-        merge(a, l, r, mid, n - mid);
+-    }
+-
+-    private static void merge(
+-            int a[], int l[], int r[], int left, int right) {
+-
+-        int i = 0, j = 0, k = 0;
+-        while (i < left && j < right) {
+-            if (l[i] <= r[j]) {
+-                a[k++] = l[i++];
+-            }
+-            else {
+-                a[k++] = r[j++];
+-            }
+-        }
+-        while (i < left) {
+-            a[k++] = l[i++];
+-        }
+-        while (j < right) {
+-            a[k++] = r[j++];
+-        }
+-    }
+-    public static void bubbleSort(int a[])
+-    {
+-        int n = a.length;
+-        for (int i = 0; i < n - 1; i++)
+-            for (int j = 0; j < n - i - 1; j++)
+-                if (a[j] > a[j + 1]) {
+-                    int temp = a[j];
+-                    a[j] = a[j + 1];
+-                    a[j + 1] = temp;
+-                }
+-    }
+-
+-}
+Index: src/Lavenshtein.java
+===================================================================
+diff --git a/src/Lavenshtein.java b/src/Lavenshtein.java
+deleted file mode 100644
+--- a/src/Lavenshtein.java	(revision 602cc7b25e142f16b3e35321dee33908660ed188)
++++ /dev/null	(revision 602cc7b25e142f16b3e35321dee33908660ed188)
+@@ -1,35 +0,0 @@
+-public class Lavenshtein {
+-    public static int countOfOperations(String str1, String str2) {
+-        int[][] d = new int[str1.length() + 1][str2.length() + 1];
+-
+-        for (int i = 0; i < str1.length() + 1; i++) {
+-            d[i][0] = i;
+-        }
+-        for (int i = 0; i < str2.length() + 1; i++) {
+-            d[0][i] = i;
+-        }
+-
+-        str1 = " " + str1;
+-        str2 = " " + str2;
+-        for (int i = 1; i < str1.length(); i++) {
+-            for (int j = 1; j < str2.length(); j++) {
+-                if (str1.charAt(i) == str2.charAt(j)) d[i][j] = Math.min(Math.min(d[i - 1][j - 1], d[i][j - 1] + 1), d[i - 1][j] + 1);
+-                else d[i][j] = Math.min(Math.min(d[i - 1][j - 1] + 1, d[i][j - 1] + 1), d[i - 1][j] + 1);
+-
+-            }
+-        }
+-
+-        for (int i = 0; i < str1.length(); i++) {
+-            for (int j = 0; j < str2.length(); j++) {
+-                System.out.print(d[i][j] + "  ");
+-            }
+-            System.out.println();
+-        }
+-
+-        int res = d[str1.length() - 1][str2.length() - 1];
+-        return res;
+-    }
+-
+-
+-}
+-
