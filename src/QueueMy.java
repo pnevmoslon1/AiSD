@@ -1,12 +1,12 @@
-public class Queue<T> implements IQueue<T> {
+public class QueueMy<T> implements IQueue<T> {
     public Node<T> head;
     public Node<T> last;
     private int size = 0;
 
-    public Queue() {
+    public QueueMy() {
 
     }
-    public Queue(T  k) {
+    public QueueMy(T  k) {
 
     }
 

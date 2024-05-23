@@ -1,13 +1,13 @@
-public class Deque<T> {
+public class DequeMy<T> {
     public Node<T> head;
     public Node<T> tail;
     private int size = 0;
 
-    public Deque() {
+    public DequeMy() {
 
     }
 
-    public Deque(T k) {
+    public DequeMy(T k) {
 
     }
 
