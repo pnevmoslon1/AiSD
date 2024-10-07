@@ -12,3 +12,8 @@ deb https://ftp.debian.org/debian/ bookworm-backports contrib main non-free non-
 
 deb https://security.debian.org/debian-security/ bookworm-security contrib main non-free non-free-firmware
 # deb-src https://security.debian.org/debian-security/ bookworm-security contrib main non-free non-free-firmware
+
+
+
+
+http://download.proxmox.com/debian/pve bookworm pve-no-subscription
